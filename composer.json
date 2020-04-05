@@ -1,0 +1,33 @@
+{
+  "name": "mridang/cpd-annotations",
+  "description": "Turns CPD style XML reports into Github pull-request annotations via the Checks API. This script is meant for use within your Github Action.",
+  "license" : "MIT",
+  "require" : {
+    "php"          : "^7.0",
+    "ext-simplexml" : "*"
+  },
+  "authors" : [
+    {
+      "name" : "Mridang Agarwalla"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^7.5"
+  },
+  "keywords": [
+    "cpd",
+    "github",
+    "actions",
+    "annotations"
+  ],
+  "readme": "README.md",
+  "support": {
+    "issues": "https://github.com/mridang/cpd-annotations/issues"
+  },
+  "scripts": {
+    "test": [
+        "phpunit --colors=always tests"
+    ]
+  },
+  "bin": ["cpd2pr"]
+}

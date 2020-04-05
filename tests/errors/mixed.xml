@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+  <duplication lines="33" tokens="78">
+    <file path="/home/runner/work/nosto-magento/nosto-magento/app/code/community/Nosto/Tagging/sql/tagging_setup/mysql4-upgrade-1.1.7-1.2.0.php" line="45"/>
+    <file path="/home/runner/work/nosto-magento/nosto-magento/app/code/community/Nosto/Tagging/sql/tagging_setup/mysql4-install-1.2.0.php" line="41"/>
+    <codefragment>
+    -&gt;newTable($installer-&gt;getTable('nosto_tagging/customer'))
+    -&gt;addColumn(
+        'customer_id', Varien_Db_Ddl_Table::TYPE_INTEGER, 10, array(
+            'unsigned' =&gt; true,
+            'nullable' =&gt; false,
+            'primary' =&gt; true,
+            'identity' =&gt; true
+        )
+    )
+    </codefragment>
+  </duplication>
+  <duplication lines="29" tokens="85">
+    <file path="/home/runner/work/nosto-magento/nosto-magento/app/code/community/Nosto/Tagging/Model/Meta/Settings.php" line="64"/>
+    <file path="/home/runner/work/nosto-magento/nosto-magento/app/code/community/Nosto/Tagging/Model/Meta/Account.php" line="90"/>
+    <codefragment>
+        if (!$helper-&gt;multiCurrencyDisabled($store)) {
+            $this-&gt;setDefaultVariantId($store-&gt;getBaseCurrencyCode());
+        } elseif ($helper-&gt;isVariationEnabled($store)) {
+            /* @var Nosto_Tagging_Helper_Variation $variationHelper  */
+            $variationHelper = Mage::helper('nosto_tagging/variation');
+            $this-&gt;setDefaultVariantId($variationHelper-&gt;getDefaultVariationId());
+        } else {
+            $this-&gt;setDefaultVariantId("");
+        }
+    </codefragment>
+  </duplication>
+</pmd-cpd>
